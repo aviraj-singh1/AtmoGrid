@@ -1,0 +1,562 @@
+==================================================
+ATMOGRID — SIH 2026 EVALUATOR DEMO GUIDE
+==================================================
+
+Problem Statement:  SIH26069
+Organization:       Ministry of Earth Sciences / IMD
+Theme:              Disaster Management
+
+--------------------------------------------------
+MAIN MESSAGE
+--------------------------------------------------
+
+"AtmoGrid doesn't count posts.
+It reconstructs evidence-backed weather incidents."
+
+"We don't measure trust by how viral something is.
+We measure how much genuinely independent evidence
+supports the real-world event."
+
+--------------------------------------------------
+TARGET TIME
+--------------------------------------------------
+
+Full demo:     3-4 minutes
+Short demo:    60-90 seconds  (see SHORT DEMO at end)
+
+--------------------------------------------------
+BEFORE THE DEMO
+--------------------------------------------------
+
+Checklist:
+[ ] Application running at http://localhost:3000
+[ ] Browser open on Command Center (/)
+[ ] Browser zoom ~90% — confirm all metric cards visible
+[ ] Scenario Replay (/replay) is reset (not mid-playback)
+[ ] No old operator modal or toast visible
+[ ] Jaipur incident (/incidents/JPR-FLD-001) loads correctly
+[ ] Internet available for MapLibre tiles (or accept fallback)
+
+NOTE: The app uses no live data. All content is
+      simulated. The clock shows 17:33:00 IST,
+      5 September 2026 — a fixed simulation timestamp.
+
+--------------------------------------------------
+DEMO FLOW
+--------------------------------------------------
+
+STEP 1 — COMMAND CENTER  (~30 seconds)
+Open: http://localhost:3000
+
+Point to the 6 metric cards at the top:
+  - 428 Raw Signals
+  - 263 Weather Relevant
+  - 119 Unique Evidence
+  - 14 Active Incidents
+  - 2 P1 Review
+  - 144 Duplicates Suppressed
+
+SAY:
+"During a severe weather event, hundreds of signals
+arrive every minute from citizens, social media, news
+and physical sensors. An IMD officer cannot manually
+read all of these. AtmoGrid transforms that noise into
+actionable incidents."
+
+Point to the transformation banner below the metrics:
+  42 raw reports → 11 unique evidence → 7 independent groups → 1 Jaipur incident
+
+SAY:
+"This is the core idea. 42 reports became 1 verified
+incident. Not because we ignored the others — because
+we analyzed what they actually represent."
+
+Point to the triage queue: JPR-FLD-001 at the top.
+  Priority: P1 · Review Now
+  Status:   Highly Corroborated
+
+SAY:
+"This is the Jaipur flooding incident — our flagship
+demonstration scenario. Let's see how it was built."
+
+
+--------------------------------------------------
+STEP 2 — SCENARIO REPLAY  (~75 seconds)
+--------------------------------------------------
+
+Click "REPLAY" in the topbar, or navigate to /replay.
+Note: The page header says JAIPUR SCENARIO REPLAY.
+
+Press: START REPLAY  (1x speed is fine)
+
+SAY:
+"Let's watch AtmoGrid process this incident in real
+time. We'll see signals arrive, get analyzed, and
+either contribute or get excluded."
+
+-- Wait for RP-01 (17:04): First citizen report --
+
+SAY:
+"A citizen writes: 'Tonk road pe bahut paani bhar gaya.'
+AtmoGrid classifies it as weather-relevant. But notice —
+it remains EMERGING, not verified. One report is
+evidence to inspect, not confirmation of a flood."
+
+-- Wait for RP-02 (17:11): Event formed --
+
+SAY:
+"A second independent observation arrives with a GPS
+image. Now two independent signals agree on the same
+location, event type and time window. An event cluster
+forms."
+
+-- *** KEY MOMENT 1 *** --
+-- Wait for RP-03 (17:14): Repost surge --
+
+SLOW DOWN or PAUSE here.
+
+Point to:
+  Raw Reports counter   →  jumps to 17
+  Unique Evidence counter  →  goes to 3 (barely moved)
+  Duplicates Suppressed  →  shows 14
+
+SAY:
+"Watch what happens. 15 new posts arrive in a batch.
+Raw reports jump to 17. But unique evidence barely moves.
+14 of those posts reuse the same underlying flood video.
+14 reposts collapsed to zero."
+
+Point to the evidence compression area showing:
+  "1 INDEPENDENT CONTRIBUTION"
+
+SAY:
+"AtmoGrid separates virality from evidence.
+18 social posts about this video contribute exactly
+ONE independent piece of media. That's the key insight."
+
+-- Continue replay --
+
+-- Wait for RP-05 (17:19): News corroboration --
+
+SAY:
+"Independent local news now reports the event.
+Even though they embed the same video, their independent
+reporting text adds a separate source. Source diversity
+increases."
+
+-- Wait for RP-06 (17:22): Physical evidence --
+
+SAY:
+"Physical weather observation data is attached.
+Rainfall context is consistent with flooding conditions.
+Public claims and physical evidence now align."
+
+-- *** KEY MOMENT 2 *** --
+-- Wait for RP-07 (17:27): Recycled media --
+
+PAUSE here.
+
+Point to: "POTENTIALLY MISLEADING" and "EXCLUDED FROM CORROBORATION"
+
+SAY:
+"A post claims: 'Jaipur flooding right now' with a
+dramatic image. AtmoGrid finds the same image first
+appeared in August 2024. It's recycled historical media."
+
+PAUSE — let that land.
+
+SAY:
+"Now here is the critical point: AtmoGrid does NOT say
+the flood is fake. It excludes THIS evidence item.
+The incident remains Highly Corroborated from the
+other independent sources."
+
+"We evaluate evidence items separately from events.
+One bad actor posting old media cannot erase multiple
+independent eyewitnesses."
+
+-- Let replay finish to RP-11 --
+
+Point to the final state:
+  42 Raw Reports
+  11 Unique Evidence
+  7 Independent Groups
+  Highly Corroborated
+  P1 — Review Now
+  "VERIFY EVENT" button visible
+
+SAY:
+"AtmoGrid's job is not to automatically issue a warning.
+Its job is to tell the officer: this incident deserves
+your attention, here is the evidence, and here is why."
+
+
+--------------------------------------------------
+STEP 3 — INCIDENT INVESTIGATION  (~45 seconds)
+--------------------------------------------------
+
+Click "Open Incident" on the replay page,
+OR navigate to /incidents/JPR-FLD-001.
+
+Point to the header:
+  Urban Flooding · Tonk Road, Jaipur, Rajasthan
+  P1 · Highly Corroborated
+
+Point to the metric strip:
+  42 raw   11 unique   7 groups   5 families   14 duplicates   1 recycled
+
+Click the "Verification" tab.
+
+Point to the 8 dimensional ratings:
+  Source independence: STRONG
+  Source diversity:    STRONG
+  Location quality:    GOOD
+  Temporal consistency: STRONG
+  Media integrity:     GOOD
+  Contradictory evidence: LOW
+  etc.
+
+SAY:
+"Instead of a black-box confidence score, an officer
+can inspect exactly why this incident was rated Highly
+Corroborated. Each dimension is shown separately.
+There is no single opaque number to trust blindly."
+
+Click the "Evidence" tab.
+
+Point to an evidence card. Show one SUPPORTS item and the EXCLUDED items.
+
+SAY:
+"Every evidence item is individually visible —
+what it claims, where it came from, what its
+provenance is, and why it was included or excluded."
+
+Click "Media Lineage" tab.
+
+Point to the graph:
+  1 original video → reposts → screenshot → crop → news embed
+
+SAY:
+"This is the media lineage graph. One original video
+produced 5 derived copies. 18 appearances contribute
+exactly 1 independent piece of media evidence.
+This is why we can't count posts."
+
+Click "Impact" tab.
+
+SAY:
+"We separate the weather event from its real-world impact.
+Urban Flooding is the event. Road waterlogging, vehicles
+stranded, traffic disruption — those are the impacts.
+Both matter for operational decisions."
+
+Point to VERIFY EVENT button (top right of investigation page).
+
+SAY:
+"The officer can Verify, Dispute, or mark Inconclusive.
+AtmoGrid supports the decision. Final official
+verification remains with the human operator.
+The system does not auto-issue IMD warnings."
+
+(OPTIONAL: Click VERIFY — show the confirmation modal.
+ Type a brief note, confirm. Show the toast and the
+ audit trail entry in the Audit tab.)
+
+
+--------------------------------------------------
+STEP 4 — EVIDENCE REVIEW  (~30 seconds, optional)
+--------------------------------------------------
+
+Navigate to /evidence-review.
+
+Point to the right panel: "Provenance Inspector"
+
+SAY:
+"In the analyst workspace, each evidence item has a
+categorical inspection — not a model score. Source
+provenance, original reference, location quality,
+temporal consistency, media integrity, independence."
+
+Scroll down. Point to Historical Media Alert panel.
+
+SAY:
+"Here is the recycled image — the same one from the
+replay. Near-identical media from August 2024.
+Temporal consistency: FAILED. Excluded."
+
+Point to the footer:
+"The incident remains HIGHLY CORROBORATED.
+One bad item does not make the event false."
+
+Point to the Semantic Duplicate panel (three reports in three languages):
+
+SAY:
+"Three reports in English, Hindi, and Hindi describe the
+same location. Different text — same meaning. AtmoGrid
+can identify that independent authors reported the same
+event rather than copy-pasting each other."
+
+
+--------------------------------------------------
+OPTIONAL — SOURCE MONITOR  (~30 seconds)
+--------------------------------------------------
+
+Navigate to /source-monitor.
+
+Point to the 8 connector rows:
+  Citizen Gateway, Social/#IMD, News/RSS, Public Dataset,
+  Physical Observation, IMD/Official Context,
+  Radar/Precipitation, Satellite (disabled)
+
+SAY:
+"Sources are modular connectors. Each has a defined role:
+discovery, corroboration, physical evidence, or official
+context. The intelligence pipeline does not depend on a
+single platform."
+
+Point to Hashtag Watch: #IMD, #HeavyRain, #Flood...
+
+SAY:
+"Hashtag monitoring tracks relevant weather discussion
+without requiring us to scrape everything."
+
+Point to the Satellite connector: DISABLED.
+
+SAY:
+"Connectors that are unavailable or restricted are shown
+honestly — not hidden. Missing access is not a failure;
+it is transparent configuration."
+
+
+--------------------------------------------------
+OPTIONAL — CITIZEN REPORT  (~30 seconds)
+--------------------------------------------------
+
+Navigate to /report.
+
+Point to the trust disclaimer banner.
+
+SAY:
+"A citizen submits an observation. Notice the message:
+citizen report does not equal verified incident."
+
+Click USE DEMO LOCATION, fill description, press SUBMIT.
+
+Watch the processing steps animate.
+
+Show the success screen: Status — UNVERIFIED.
+
+SAY:
+"The submission becomes one evidence item queued for
+AtmoGrid analysis — not an automatically verified event.
+It must be corroborated by independent evidence before
+it contributes strongly to an incident."
+
+
+--------------------------------------------------
+OPTIONAL — ADMIN PANEL  (~20 seconds)
+--------------------------------------------------
+
+Navigate to /admin.
+
+Point to Governance Safeguards panel (always visible):
+  - Human verification required (locked)
+  - Original source preserved
+  - Operator actions audited
+  - Evidence exclusions explainable
+  - Missing evidence not contradiction
+
+SAY:
+"The administration panel enforces governance principles.
+Human verification cannot be disabled, even in the admin.
+All operator actions are audited."
+
+
+--------------------------------------------------
+CLOSING LINE
+--------------------------------------------------
+
+Option A:
+"AtmoGrid converts noisy weather signals into
+deduplicated, source-independent and explainable incidents —
+so IMD officers can focus on what actually deserves
+their attention."
+
+Option B:
+"The challenge in weather intelligence is not collecting
+data. It is separating 42 raw reports into 11 pieces of
+evidence from 7 independent sources — and explaining
+why the incident is real, even after excluding a misleading
+social post. That is what AtmoGrid is built to do."
+
+
+--------------------------------------------------
+SHORT 60-90 SECOND FALLBACK DEMO
+--------------------------------------------------
+
+If the panel is rushed or short on time:
+
+1. Open Command Center (/)
+   "428 signals → 119 unique evidence → 14 incidents.
+    AtmoGrid shows incidents, not a wall of posts."
+
+2. Open /replay, press START REPLAY, pause at RP-03
+   "15 posts arrived. 14 reused the same video.
+    Unique evidence barely moved. Virality ≠ evidence."
+
+3. Point to RP-07 (historical media)
+   "This image is from 2024. Excluded.
+    The incident remains corroborated."
+
+4. Open /incidents/JPR-FLD-001
+   "42 raw reports, 11 unique, 7 independent groups.
+    Highly corroborated. The officer can inspect every
+    dimension — no black-box score."
+
+5. Point to VERIFY button
+   "Human decision. AtmoGrid explains. The officer decides."
+
+
+--------------------------------------------------
+WHAT NOT TO CLAIM
+--------------------------------------------------
+
+DO NOT say:
+"We are currently scraping all Indian social media."
+
+DO NOT say:
+"We are connected live to IMD radar and satellite."
+
+DO NOT say:
+"Our AI detects every fake image."
+
+DO NOT say:
+"This handles millions of events per second."
+
+DO NOT say:
+"AtmoGrid replaces IMD forecasting."
+
+DO NOT say:
+"The system issues official weather warnings."
+
+INSTEAD say:
+"This prototype demonstrates the workflow using
+representative, historical, replayed and simulated
+sources. The same connector and evidence architecture
+is designed for authorized live providers in production."
+
+
+--------------------------------------------------
+IF ASKED: "IS THIS LIVE DATA?"
+--------------------------------------------------
+
+Say:
+"The intelligence workflow is fully implemented as an
+interactive prototype. For SIH evaluation, we use replay
+and representative datasets because extreme weather
+events cannot be guaranteed during a demo window, and
+some platforms require restricted API access.
+
+The same connector-and-evidence architecture is designed
+to accept authorized live sources in a production
+deployment."
+
+
+--------------------------------------------------
+IF ASKED: "HOW DO YOU DETECT FAKE REPORTS?"
+--------------------------------------------------
+
+Say:
+"We avoid a single black-box fake/real label.
+
+We evaluate provenance, geo-time consistency,
+duplicate detection, media lineage, historical-media
+reuse, independent-source support, and physical and
+official weather context.
+
+A suspicious evidence item is excluded without
+automatically calling the entire incident false.
+The recycled August 2024 image in our demo is the
+clearest example of this."
+
+
+--------------------------------------------------
+IF ASKED: "WHAT IS UNIQUE ABOUT ATMOGRID?"
+--------------------------------------------------
+
+Say:
+"Most systems collect posts. AtmoGrid determines how many
+genuinely independent observations those posts represent,
+then reconstructs them into evidence-backed real-world
+incidents.
+
+The key differentiators are:
+- Source independence analysis (not just deduplication)
+- Media lineage tracking (one video → 18 appearances → 1 contribution)
+- Explainable verification (no black-box confidence score)
+- Recycled media detection without invalidating the event
+- Ground impact separated from weather event type
+- Human authority preserved as the final verification step"
+
+
+--------------------------------------------------
+IF ASKED: "WHY IS THIS BIG DATA?"
+--------------------------------------------------
+
+Say:
+"Weather intelligence has all four big-data properties:
+
+Volume:   large streams of public signals
+Velocity: continuous real-time incoming reports
+Variety:  text, images, video, APIs, observations, warnings
+Veracity: duplicates, misleading content, source independence
+
+AtmoGrid's core contribution is improving VERACITY —
+ensuring that what reaches an officer is genuinely
+independent, explainable, and trustworthy — before
+any operational action is taken."
+
+
+--------------------------------------------------
+IF ASKED: "WHY NOT JUST USE AI CONFIDENCE SCORES?"
+--------------------------------------------------
+
+Say:
+"An AI confidence score can be wrong, and the officer
+cannot inspect why. AtmoGrid shows the reasoning:
+which independent groups agree, what physical context
+supports it, what was excluded and why.
+
+If the system says 'Highly Corroborated', the officer
+can open the verification tab and check every dimension
+that led to that assessment. That explainability is
+essential for a system supporting official decisions."
+
+
+--------------------------------------------------
+IMPORTANT NOTES FOR PRESENTERS
+--------------------------------------------------
+
+- The clock shows 17:33:00 IST. That is fixed.
+  Say "simulated timestamp" if asked.
+
+- Operator actions (VERIFY, DISPUTE, etc.) are local
+  to this browser session. Refreshing resets them.
+  This is intentional for the prototype.
+
+- "14 simulated incidents" in the national metrics is
+  the total described context. Only 5 incidents have
+  full fixture data in the prototype.
+
+- The "Demo environment" label in the sidebar and the
+  "SIMULATED DATA" tag on each page are deliberate.
+  They show evaluators the prototype is honest about
+  its scope.
+
+- Priorities shown (P1, P2, P3) are internal AtmoGrid
+  operational categories, not official IMD warning
+  severity levels.
+
+==================================================
+END OF DEMO GUIDE
+==================================================
