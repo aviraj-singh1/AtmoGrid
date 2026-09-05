@@ -1,0 +1,81 @@
+import { IncidentTimelineItem } from "@/types/domain";
+
+export const jaipurTimeline: IncidentTimelineItem[] = [
+  {
+    id: "TL-01",
+    time: "17:04",
+    title: "First citizen report",
+    detail: "Urban flooding reported",
+    category: "OBSERVATION",
+  },
+  {
+    id: "TL-02",
+    time: "17:08",
+    title: "Second independent report",
+    detail: "Waterlogging confirmed",
+    category: "OBSERVATION",
+  },
+  {
+    id: "TL-03",
+    time: "17:11",
+    title: "Unique GPS-tagged image received",
+    detail: "New independent media asset",
+    category: "EVIDENCE",
+  },
+  {
+    id: "TL-04",
+    time: "17:14",
+    title: "Social repost activity increases",
+    detail: "Repeated distribution detected",
+    category: "OBSERVATION",
+  },
+  {
+    id: "TL-05",
+    time: "17:16",
+    title: "Duplicate cluster detected",
+    detail: "12 reposts collapsed",
+    category: "SYSTEM_ACTION",
+  },
+  {
+    id: "TL-06",
+    time: "17:19",
+    title: "Independent local news report detected",
+    detail: "New source family attached",
+    category: "EVIDENCE",
+  },
+  {
+    id: "TL-07",
+    time: "17:22",
+    title: "Nearby rainfall observation attached",
+    detail: "Physical context supports conditions",
+    category: "EVIDENCE",
+  },
+  {
+    id: "TL-08",
+    time: "17:24",
+    title: "Vehicles stranded impact detected",
+    detail: "Three independent observations",
+    category: "IMPACT",
+  },
+  {
+    id: "TL-09",
+    time: "17:27",
+    title: "Recycled media identified and excluded",
+    detail: "Potentially misleading item removed",
+    category: "SYSTEM_ACTION",
+  },
+  {
+    id: "TL-10",
+    time: "17:29",
+    title: "Verification changed",
+    detail: "CORROBORATING → HIGHLY CORROBORATED",
+    category: "STATUS_CHANGE",
+  },
+  {
+    id: "TL-11",
+    time: "17:31",
+    title: "Priority changed",
+    detail: "P2 → P1",
+    category: "STATUS_CHANGE",
+  },
+];

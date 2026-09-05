@@ -1,0 +1,48 @@
+import { EvidenceItem } from "@/types/domain";
+export const signals: EvidenceItem[] = [
+  {
+    id: "SIG-001",
+    observedAt: "17:31:22",
+    sourceFamily: "Citizen Report",
+    location: "Jaipur",
+    event: "Urban Flooding",
+    disposition: "Unique Evidence",
+    incidentId: "JPR-FLD-001",
+  },
+  {
+    id: "SIG-002",
+    observedAt: "17:31:08",
+    sourceFamily: "Social / #IMD",
+    location: "Jaipur",
+    event: "Flooding",
+    disposition: "Duplicate Detected",
+    incidentId: "JPR-FLD-001",
+  },
+  {
+    id: "SIG-003",
+    observedAt: "17:30:56",
+    sourceFamily: "News",
+    location: "Rajasthan",
+    event: "Flooding",
+    disposition: "Independent Source",
+    incidentId: "JPR-FLD-001",
+  },
+  {
+    id: "SIG-004",
+    observedAt: "17:30:41",
+    sourceFamily: "Weather Observation",
+    location: "Jaipur",
+    event: "Heavy Rainfall",
+    disposition: "Physical Evidence",
+    incidentId: "JPR-FLD-001",
+  },
+  {
+    id: "SIG-005",
+    observedAt: "17:30:22",
+    sourceFamily: "Social",
+    location: "Jaipur",
+    event: "Image",
+    disposition: "Possible Recycled Media",
+    incidentId: "JPR-FLD-001",
+  },
+];
