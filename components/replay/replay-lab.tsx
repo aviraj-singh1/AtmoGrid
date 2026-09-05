@@ -230,7 +230,7 @@ export function ReplayLab() {
   return (
     <div className="replay-lab">
       <header className="page-heading replay-heading">
-        <div><div className="eyebrow">SCENARIO REPLAY / PHASE 04</div><h1>Jaipur Urban Flooding — Evidence Replay</h1><p>Watch AtmoGrid reconstruct and verify a weather incident from noisy incoming signals.</p></div>
+        <div><div className="eyebrow">JAIPUR SCENARIO REPLAY</div><h1>Jaipur Urban Flooding — Evidence Replay</h1><p>Watch AtmoGrid reconstruct and verify a weather incident from noisy incoming signals.</p></div>
         <span className="replay-mode-badge"><i /> REPLAY MODE</span>
       </header>
       <div className="replay-disclaimer"><Clock3 size={13} /><strong>SIMULATED / HISTORICAL DEMO REPLAY</strong><span>No live production data, ingestion infrastructure or model output.</span></div>

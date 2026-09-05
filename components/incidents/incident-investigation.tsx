@@ -144,7 +144,7 @@ export function IncidentInvestigation({ incident }: { incident: Incident }) {
           <div className="incident-id-row">
             <span>INCIDENT INVESTIGATION</span>
             <code>{incident.id}</code>
-            <span className="phase-chip">PHASE 02 · SIMULATED</span>
+            <span className="phase-chip">SIMULATED DATA</span>
           </div>
           <h1>{incident.title}</h1>
           <p>

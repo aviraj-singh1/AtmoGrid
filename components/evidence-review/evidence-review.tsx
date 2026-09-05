@@ -51,7 +51,7 @@ export function EvidenceReview() {
   const update = (key: keyof Filters, value: string) => setFilters((current) => ({ ...current, [key]: value }));
 
   return <div className="evidence-review-page">
-    <header className="evidence-review-header"><div><span>EVIDENCE OPERATIONS / PHASE 03</span><h1>Evidence Review</h1><p>Inspect, trace and verify incoming weather evidence before it contributes to incident corroboration.</p></div><div className="review-principles"><span>REPORTS ≠ EVENTS</span><span>REPOSTS ≠ CONFIRMATIONS</span><span>VIRAL ≠ TRUSTED</span></div></header>
+    <header className="evidence-review-header"><div><span>EVIDENCE OPERATIONS</span><h1>Evidence Review</h1><p>Inspect, trace and verify incoming weather evidence before it contributes to incident corroboration.</p></div><div className="review-principles"><span>REPORTS ≠ EVENTS</span><span>REPOSTS ≠ CONFIRMATIONS</span><span>VIRAL ≠ TRUSTED</span></div></header>
     <section className="evidence-review-metrics">{evidenceReviewMetrics.map((metric) => <div className={metric.tone} key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</section>
     <EvidenceFilterBar filters={filters} update={update} reset={() => { setFilters(initialFilters); setContributionView("All"); }} count={visible.length} />
     <section className="review-mode-bar"><span><Filter size={12} />Contribution view</span>{(["All", "Included", "Excluded"] as const).map((view) => <button key={view} className={contributionView === view ? "active" : ""} onClick={() => setContributionView(view)}>{view === "Included" ? <CheckCircle2 size={11} /> : view === "Excluded" ? <CircleSlash2 size={11} /> : null}{view}</button>)}<small>{visible.length} representative records</small></section>

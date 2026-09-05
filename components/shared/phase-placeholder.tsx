@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, Layers3, LockKeyhole } from "lucide-react";
+import { ArrowLeft, Layers3 } from "lucide-react";
 import { PageHeader } from "./status";
 export function PhasePlaceholder({
   title,
   description,
-  phase = "a future phase",
   reference,
 }: {
   title: string;
@@ -22,15 +21,14 @@ export function PhasePlaceholder({
       <section className="placeholder panel">
         <div className="placeholder-art">
           <Layers3 size={48} />
-          <LockKeyhole size={20} />
         </div>
-        <span className="demo-tag">FOUNDATION READY</span>
-        <h2>Coming in {phase}</h2>
+        <span className="demo-tag">DEMO ENVIRONMENT</span>
+        <h2>Not included in this demonstration</h2>
         <p>{description}</p>
         {reference && <code>{reference}</code>}
         <div className="placeholder-note">
-          The Phase 1 Command Center provides the simulated operational
-          overview. This module is reserved for a subsequent build.
+          This module is outside the scope of the current prototype demonstration.
+          The Command Center provides the national operational overview.
         </div>
         <Link className="primary-button" href="/">
           <ArrowLeft size={16} />

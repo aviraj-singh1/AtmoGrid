@@ -42,7 +42,7 @@ export function SourceMonitor() {
 
   return (
     <div className="source-monitor-page">
-      <header className="page-heading"><div><div className="eyebrow">SOURCE OPERATIONS / PHASE 05</div><h1>Source Monitor</h1><p>Monitor ingestion sources, connector health, provenance policies and evidence availability.</p></div><span className="demo-tag">SIMULATED OPERATIONAL METRICS</span></header>
+      <header className="page-heading"><div><div className="eyebrow">SOURCE OPERATIONS</div><h1>Source Monitor</h1><p>Monitor ingestion sources, connector health, provenance policies and evidence availability.</p></div><span className="demo-tag">SIMULATED OPERATIONAL METRICS</span></header>
       <section className="source-summary" aria-label="Source monitor summary">
         {[{ label: "Configured Sources", value: sourceConnectors.length, tone: "cyan" }, { label: "Healthy", value: healthy, tone: "green" }, { label: "Replay / Historical", value: replayHistorical, tone: "amber" }, { label: "Unavailable", value: unavailable, tone: "muted" }, { label: "Signals Ingested", value: signals, note: "demo records" }, { label: "Last 15 min", value: 67, note: "simulated" }, { label: "Connector Errors", value: 0, tone: "green" }].map((metric) => <div className={metric.tone || ""} key={metric.label}><strong>{metric.value}</strong><span>{metric.label}<small>{metric.note}</small></span></div>)}
       </section>

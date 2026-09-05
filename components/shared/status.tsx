@@ -58,7 +58,7 @@ export function PageHeader({
         <p>{description}</p>
       </div>
       <span className="demo-tag">
-        PHASE 01 <span> / </span> SIMULATED DATA
+        SIMULATED DATA
       </span>
     </div>
   );

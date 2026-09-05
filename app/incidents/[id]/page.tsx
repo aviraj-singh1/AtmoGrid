@@ -31,9 +31,8 @@ export default async function Page({
   return (
     <PhasePlaceholder
       title={incident.title}
-      phase="Phase 2"
       reference={incident.id}
-      description={`${incident.location} · Incident investigation and evidence review will be available in Phase 2.`}
+      description={`${incident.location} · Full incident investigation is demonstrated for the Jaipur Urban Flooding scenario (JPR-FLD-001).`}
     />
   );
 }

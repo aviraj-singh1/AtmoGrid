@@ -99,7 +99,7 @@ export function CitizenReport() {
 
   return (
     <div className="citizen-page">
-      <header className="citizen-page-heading"><div><div className="eyebrow">CITIZEN OBSERVATION / PHASE 05</div><h1>Report Ground Weather Condition</h1><p>Submit a location-aware observation to AtmoGrid for verification and incident correlation.</p></div><span className="demo-tag">LOCAL DEMO SUBMISSION</span></header>
+      <header className="citizen-page-heading"><div><div className="eyebrow">CITIZEN OBSERVATION</div><h1>Report Ground Weather Condition</h1><p>Submit a location-aware observation to AtmoGrid for verification and incident correlation.</p></div><span className="demo-tag">LOCAL DEMO SUBMISSION</span></header>
       <div className="citizen-trust-note"><ShieldCheck size={18} /><div><strong>Citizen report ≠ verified incident</strong><p>Your observation becomes one evidence item. AtmoGrid checks duplication, provenance, geo-time consistency and independent corroboration before it affects incident verification.</p></div></div>
       {state === "PROCESSING" ? (
         <section className="citizen-processing" aria-live="polite"><span>PROCESSING LOCAL OBSERVATION</span><h2>Preparing evidence for review</h2><div>{citizenProcessingSteps.map((step, index) => <div className={index <= processingStep ? "complete" : ""} key={step}>{index < processingStep ? <Check size={15} /> : <i />}{step}</div>)}</div><p>No data leaves this browser in the prototype.</p></section>

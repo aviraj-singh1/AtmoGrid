@@ -47,7 +47,7 @@ export function AdminPanel() {
 
   return (
     <div className="admin-page">
-      <header className="page-heading"><div><div className="eyebrow">PLATFORM GOVERNANCE / PHASE 05</div><h1>Administration</h1><p>Manage AtmoGrid connector configuration, processing policies and operational audit settings.</p></div><span className="demo-tag">PROTOTYPE MODE · LOCAL STATE</span></header>
+      <header className="page-heading"><div><div className="eyebrow">PLATFORM GOVERNANCE</div><h1>Administration</h1><p>Manage AtmoGrid connector configuration, processing policies and operational audit settings.</p></div><span className="demo-tag">PROTOTYPE MODE · LOCAL STATE</span></header>
       <nav className="admin-tabs" aria-label="Administration sections">{tabs.map((item) => <button className={tab === item ? "active" : ""} onClick={() => setTab(item)} key={item}>{item}</button>)}</nav>
       <div className="admin-layout">
         <section className="panel admin-content">
